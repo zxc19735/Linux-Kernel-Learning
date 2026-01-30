@@ -14,7 +14,7 @@
 
 ## 步驟：
 #### 建立並進入實驗一資料夾(以下程式碼都在同個資料夾下執行)：
-`mkdir ~/kernel_lab && cd ~/kernel_lab`
+`mkdir ~/kernel_lab1 && cd ~/kernel_lab1`
 #### 撰寫程式碼：
 `nano hello.c` (貼上 hello.c 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)。`nano Makefile` (貼上 Makefile 程式碼後，Ctrl+O 存檔，Ctrl+X 離開) (提醒：在 Makefile 中，若貼上時發現程式碼前有空格，刪掉後以 Tab 取代，避免編譯失敗)
 #### 開始編譯：
