@@ -2,13 +2,13 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-// 當你執行 insmod (載入模組) 時會跑這裡
+// 當執行 insmod (載入模組) 時，會進入這段程式碼
 static int __init hello_init(void) {
 	printk(KERN_INFO "Hello! 這是我在 Kernel 的第一步\n");
 	return 0;
 }
 
-// 當你執行 rmmod (移除模組) 時會跑這裡
+// 當你執行 rmmod (移除模組) 時，會進入這段程式碼
 static void __exit hello_exit(void) {
 	printk(KERN_INFO "Goodbye! 結束 Kernel 實驗\n");
 }
