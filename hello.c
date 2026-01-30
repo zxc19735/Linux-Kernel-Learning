@@ -8,7 +8,7 @@ static int __init hello_init(void) {
 	return 0;
 }
 
-// 當你執行 rmmod (移除模組) 時，會進入這段程式碼
+// 當執行 rmmod (移除模組) 時，會進入這段程式碼
 static void __exit hello_exit(void) {
 	printk(KERN_INFO "Goodbye! 結束 Kernel 實驗\n");
 }
