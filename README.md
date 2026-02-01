@@ -1,4 +1,6 @@
 # 實驗一：Kernel Mode "Hello Workd" 
+## 實驗目的：
+* 了解核心特權級別 (Ring 0)
 ## 環境：Oracle VirualBox VM
 * 作業系統：Ubuntu-24.03.3 LTS
 * RAM：4GB
@@ -16,7 +18,7 @@
 #### 建立並進入實驗一資料夾(以下程式碼都在同個資料夾下執行)：
 `mkdir kernel_lab1 && cd kernel_lab1`
 #### 撰寫程式碼：
-`nano hello.c` (貼上 hello.c 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)。`nano Makefile` (貼上 Makefile 程式碼後，Ctrl+O 存檔，Ctrl+X 離開) (提醒：在 Makefile 中，若貼上時發現程式碼前有空格，刪掉後以 Tab 取代，避免編譯失敗)
+`nano hello.c` (貼上 hello.c 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)。`nano Makefile` (貼上 Makefile 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)
 #### 開始編譯：
 `make` ，等待編譯過程，若成功編譯完成，輸入`ls`後會發現在資料夾裡頭出現 `hello.ko`
 #### 載入核心並查看訊息：
@@ -31,8 +33,10 @@
 1. `insmod` (insert module)：hello.c 程式碼正式成為作業系統的一部份，並執行'hello_init' 。Kernel會把 .ko 檔案載入記憶體並分配權限，此時程式碼擁有高權限
 2. `rmmod` (remove module)：執行 `hello_exit` 並把記憶體還給系統
 3. makefile` ：做為一個傳聲筒，請系統編譯 hello.o，並將編譯的結果回傳給目前的資料夾
-
-## 補充說明2：因筆者主機的 OS 為 Windows，也可使用 SSH 連線，進行遠端操作 VM 裡的 terminal，SSH 連線步驟如下：
+## 遇到困難與解決方案：
+在 Makefile 中需留意 Tab 與空白鍵的縮排問題，以 Tab 取代空格，避免編譯失敗
+## 補充說明 2：
+因筆者主機的 OS 為 Windows，也可使用 SSH 連線，進行遠端操作 VM 裡的 terminal，SSH 連線步驟如下：
 1. 在 Ubuntu 裡安裝 SSH 伺服器 開啟終端機輸入： sudo apt update && sudo apt install openssh-server -y
 2. 在 VirtualBox 設定「通訊埠轉發」 (Port Forwarding) 因為 VM 躲在虛擬網卡後面，故通知 Windows：「當我連到 host 的 2222 port 時，轉給 VM 的 22 埠」。
 在 VirtualBox 選單：設定 -> 網路 -> 介面卡 1，確認是 NAT 模式。
