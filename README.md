@@ -31,3 +31,11 @@
 1. `insmod` (insert module)：hello.c 程式碼正式成為作業系統的一部份，並執行'hello_init' 。Kernel會把 .ko 檔案載入記憶體並分配權限，此時程式碼擁有高權限
 2. `rmmod` (remove module)：執行 `hello_exit` 並把記憶體還給系統
 3. makefile` ：做為一個傳聲筒，請系統編譯 hello.o，並將編譯的結果回傳給目前的資料夾
+
+## 補充說明2：因筆者主機的 OS 為 Windows，也可使用 SSH 連線，進行遠端操作 VM 裡的 terminal，SSH 連線步驟如下：
+1. 在 Ubuntu 裡安裝 SSH 伺服器 開啟終端機輸入： sudo apt update && sudo apt install openssh-server -y
+2. 在 VirtualBox 設定「通訊埠轉發」 (Port Forwarding) 因為 VM 躲在虛擬網卡後面，故通知 Windows：「當我連到 host 的 2222 port 時，轉給 VM 的 22 埠」。
+在 VirtualBox 選單：設定 -> 網路 -> 介面卡 1，確認是 NAT 模式。
+點開 進階 -> 通訊埠轉發。
+新增一條規則：名稱 SSH，通訊協定 TCP，主機 IP 127.0.0.1，主機連接埠 2222，客用 IP 留白，客用連接埠 22。
+3. 在 Windows 連線 打開你的 Windows PowerShell 或 CMD，輸入： ssh -p 2222 你的Ubuntu帳號@127.0.0.1 (第一次連線時會詢問是否信任，輸入 yes，然後輸入 Ubuntu 密碼)
