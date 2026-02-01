@@ -1,0 +1,1 @@
+savedcmd_my_chardev.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T /usr/src/linux-headers-6.14.0-37-generic/scripts/module.lds -o my_chardev.ko my_chardev.o my_chardev.mod.o .module-common.o
