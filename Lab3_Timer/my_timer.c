@@ -6,10 +6,10 @@
 static struct timer_list my_timer;
 
 // 鬧鐘響了以後要執行的動作
-void my_timer_callback(struct timer_list *t) {
+static void my_timer_callback(struct timer_list *t) {
     printk(KERN_INFO "Alarm: 鬧鐘響了！核心正在執行非同步任務\n");
     
-    // 如果想要讓它一直響，就在結尾重新設定下一次時間
+    // 如果想計時器一直響，則在結尾重新設定下一次時間
     mod_timer(&my_timer, jiffies + msecs_to_jiffies(5000));
 }
 
@@ -26,7 +26,7 @@ static int __init timer_init(void) {
 }
 
 static void __exit timer_exit(void) {
-    // 3. 記得一定要刪除定時器，否則卸載後鬧鐘響了會導致核心崩潰
+    // 3. 務必要刪除定時器，否則rmmod後鬧鐘響了會導致核心崩潰產生panic
     del_timer(&my_timer);
     printk(KERN_INFO "Timer Module: 鬧鐘已移除\n");
 }
