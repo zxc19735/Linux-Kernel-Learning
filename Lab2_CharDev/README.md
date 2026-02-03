@@ -28,10 +28,13 @@
 10. 關閉程式並清理環境：`sudo rmmod my_chardev` 且 `sudo rm /dev/my_os_lab`。
 
 ## 結果：
-成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間拷貝。
+成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間的讀取與寫入。
 
 ## 解決困難與心得分享：
-1.Everything is a file：透過這個實驗，深刻體會到為什麼 Linux 把硬體操作抽象化為檔案操作，這大幅降低了應用程式開發者的門檻。
+1. Everything is a file：透過這個實驗，深刻體會到為什麼 Linux 把硬體操作抽象化為檔案操作，這大幅降低了開發的門檻。
+2. 透過 linux 的 dev_read、dev_write 等 system call 功能，實作了作業系統裡的 software interrupt (軟體中斷) 概念，看著教科書的定義和例子的應用，非常有成就感。
+3. 除了實驗的操作，筆者也花了許多時間熟悉 git 與 github 操作，因為在先前經驗中 local 端修改了程式，但在 github 修改了 README.md 內容，導致在 VM 裡使用 push 更新 project 時發生了 error，即git 擔心使用 push 直接推上去會覆蓋掉雲端的新版的 README.md，造成了衝突，所幸後來備份檔案後，單獨將新版的 REAMDE.md 加入 project，才成功解決了版本不一致的問題。
+
 
 ## 補充說明：
 1. copy_to_user / copy_from_user：這是核心開發最重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的搬運員來確保資料交換的安全性。
