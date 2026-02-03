@@ -16,44 +16,23 @@
 5. 透過 `echo` 與 `head` 指令模擬應用程式 (User Space) ，對硬體進行讀寫操作。
 
 ## 步驟：
-#### 建立並進入實驗二資料夾：
-`mkdir kernel_lab2 && cd kernel_lab2`
+1. 建立並進入實驗二資料夾：`mkdir kernel_lab2 && cd kernel_lab2` 。
+2. 撰寫程式碼：`nano my_chardev.c` (實作 read, write 與核心緩衝區管理)。`nano Makefile` (將編譯對象改為 my_chardev.o)。
+3. 編譯與掛載：執行 `make` 產生 my_chardev.ko。執行 `sudo insmod my_chardev.ko`。
+4. 連結硬體節點：查詢主裝置號：dmesg | tail (假設看到的號碼為 236)。
+5. 建立裝置檔案：`sudo mknod /dev/my_os_lab c 236 0`。
+6. 調整權限：`sudo chmod 666 /dev/my_os_lab`。
+7. 測試數據傳輸並寫入資料：`echo "Hello_OS_Kernel" > /dev/my_os_lab`。
+8. 讀取資料：`head -n 1 /dev/my_os_lab` (若成功，可在螢幕看到剛才寫入的字串)。
+9. 觀察核心行為：`sudo dmesg | tail` ，會看到 copy_from_user 與 copy_to_user 的處理紀錄。
+10. 關閉程式並清理環境：`sudo rmmod my_chardev` 且 `sudo rm /dev/my_os_lab`。
 
-#### 撰寫程式碼：
-`nano my_chardev.c` (實作 read, write 與核心緩衝區管理)。`nano Makefile` (將編譯對象改為 my_chardev.o)。
-
-#### 編譯與掛載：
-執行 `make` 產生 my_chardev.ko。執行 `sudo insmod my_chardev.ko`。
-
-#### 連結硬體節點：
-查詢主裝置號：dmesg | tail (假設看到的號碼為 236)。
-
-#### 建立裝置檔案：
-`sudo mknod /dev/my_os_lab c 236 0`。
-
-#### 調整權限：
-`sudo chmod 666 /dev/my_os_lab`。
-
-#### 測試數據傳輸：
-寫入資料：`echo "Hello_OS_Kernel" > /dev/my_os_lab`。
-
-#### 讀取資料：
-`head -n 1 /dev/my_os_lab` (若成功，可在螢幕看到剛才寫入的字串)。
-
-#### 觀察核心行為：
-`sudo dmesg | tail` ，會看到 copy_from_user 與 copy_to_user 的處理紀錄。
-
-清理環境：
-`sudo rmmod my_chardev` 且 `sudo rm /dev/my_os_lab`。
-
-#### 結果：
+## 結果：
 成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間拷貝。
 
-#### 遇到的困難與解決方案：
+## 解決困難與心得分享：
+1.Everything is a file：透過這個實驗，深刻體會到為什麼 Linux 把硬體操作抽象化為檔案操作，這大幅降低了應用程式開發者的門檻。
 
-#### 補充說明：
-copy_to_user / copy_from_user：這是核心開發最重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的搬運員來確保資料交換的安全性。
-
-Major Number (主裝置號)：如同分機號碼，讓 Linux 核心知道要把 /dev/ 下的請求轉交給哪一個驅動程式。
-
-Everything is a file：透過這個實驗，深刻體會到為什麼 Linux 把硬體操作抽象化為檔案操作，這大幅降低了應用程式開發者的門檻。
+## 補充說明：
+1. copy_to_user / copy_from_user：這是核心開發最重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的搬運員來確保資料交換的安全性。
+2. Major Number (主裝置號)：如同分機號碼，讓 Linux 核心知道要把 /dev/ 下的請求轉交給哪一個驅動程式。
