@@ -25,7 +25,7 @@
 將程式碼成功放進 kernel，並使用 printk 顯示字串
 
 ## 挑戰與心得：
-在 Makefile 中需留意 Tab 與空白鍵的縮排問題，以 Tab 取代空格，避免編譯失敗
+1. 在 Makefile 中需留意 Tab 與空白鍵的縮排問題，以 Tab 取代空格，避免編譯失敗
 
 ## 補充說明：
 1. `insmod` (insert module)：hello.c 程式碼正式成為作業系統的一部份，並執行'hello_init' 。Kernel會把 .ko 檔案載入記憶體並分配權限，此時程式碼擁有高權限
