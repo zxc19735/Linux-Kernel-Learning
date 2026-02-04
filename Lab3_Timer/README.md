@@ -28,6 +28,11 @@ dmesg -w (進入觀察模式，每五秒會看到一次鬧鐘響起)。
 
 
 ## 開發環境
+* VM：Oracle VirualBox VM
+* 作業系統：Ubuntu-24.03.3 LTS
+* RAM：4GB
+* 硬碟容量：20GB
+* CPU：4核心
 
 ## 補充說明
 jiffies：Linux 核心的時間單位。透過 jiffies + msecs_to_jiffies(5000)，我們能精準計算出「未來 5 秒」對應的核心時間。
