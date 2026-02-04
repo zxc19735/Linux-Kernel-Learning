@@ -30,7 +30,7 @@
 ## 結果：
 成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間的讀取與寫入。
 
-## 解決困難與心得分享：
+## 挑戰與心得：
 1. Everything is a file：透過這個實驗，深刻體會到為什麼 Linux 把硬體操作抽象化為檔案操作，這大幅降低了開發的門檻。
 2. 實作 Software interrupt：透過 linux 的 dev_read、dev_write 等 system call 功能，實作了作業系統裡的 software interrupt (軟體中斷) 概念，看著教科書的定義和例子的應用，非常有成就感。
 3. git 衝突與解決：這次實驗遇到了 git 衝突的問題。由於筆者在 VM 修改了新程式，但又在 github 上修改了 README.md 內容，讓地端與雲端都出現了新內容，這時就會產生衝突：當雲端有一份檔案，也有一份「同名但 git 還不認識」的檔案時，Git 為了保護資料不被雲端覆蓋，會選擇直接「罷工」，導致使用 git 的 pull 、push 指令時都發生了 error，所幸後來備份檔案後，單獨將新版的 REAMDE.md 加入地端的 project，才成功解決了版本不一致的問題。
