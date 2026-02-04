@@ -33,15 +33,16 @@
 
 ## 步驟：
 1. 建立並進入實驗二資料夾：`mkdir kernel_lab2 && cd kernel_lab2` 。
-2. 撰寫程式碼：`nano my_chardev.c` (實作 read, write 與核心緩衝區管理)。`nano Makefile` (將編譯對象改為 my_chardev.o)。
-3. 編譯與掛載：執行 `make` 產生 my_chardev.ko。執行 `sudo insmod my_chardev.ko`。
-4. 連結硬體節點：查詢主裝置號：dmesg | tail (假設看到的號碼為 236)。
-5. 建立裝置檔案：`sudo mknod /dev/my_os_lab c 236 0`。
-6. 調整權限：`sudo chmod 666 /dev/my_os_lab`。
-7. 測試數據傳輸並寫入資料：`echo "Hello_OS_Kernel" > /dev/my_os_lab`。
-8. 讀取資料：`head -n 1 /dev/my_os_lab` (若成功，可在螢幕看到剛才寫入的字串)。
-9. 觀察核心行為：`sudo dmesg | tail` ，會看到 copy_from_user 與 copy_to_user 的處理紀錄。
-10. 關閉程式並清理環境：`sudo rmmod my_chardev` 且 `sudo rm /dev/my_os_lab`。
+2. 撰寫 my_chardev.c，實作 read, write 與核心緩衝區管理：`nano my_chardev.c`
+3. 撰寫 Makefile：`nano Makefile`。
+4. 編譯與掛載：執行 `make` 產生 my_chardev.ko。執行 `sudo insmod my_chardev.ko`。
+5. 連結硬體節點：查詢主裝置號：dmesg | tail (假設看到的號碼為 236)。
+6. 建立裝置檔案：`sudo mknod /dev/my_os_lab c 236 0`。
+7. 調整權限：`sudo chmod 666 /dev/my_os_lab`。
+8. 測試數據傳輸並寫入資料：`echo "Hello_OS_Kernel" > /dev/my_os_lab`。
+9. 讀取資料：`head -n 1 /dev/my_os_lab` (若成功，可在螢幕看到剛才寫入的字串)。
+10. 觀察核心行為：`sudo dmesg | tail` ，會看到 copy_from_user 與 copy_to_user 的處理紀錄。
+11. 關閉程式並清理環境：`sudo rmmod my_chardev` 且 `sudo rm /dev/my_os_lab`。
 
 ## 結果：
 成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間的讀取與寫入。
