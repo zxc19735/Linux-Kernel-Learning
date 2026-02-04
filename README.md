@@ -13,3 +13,4 @@
 * 理解 **Jiffies** 與核心時間管理。
 
 ## 補充
+1. 每個實驗都有提供各自的 Source Code以及 README.md，而在程式編譯的過程中會產生 .o、.ko 等產出物（Build Artifacts），為方便讀者閱讀以及實驗操作，筆者已製作 .gitignore 來過濾其他的編譯檔案，只上傳源碼（Source Code），不上傳產出物，讀者可直接將 Makefile 與程式碼下載，依照 README.md 提供的流程步驟，逐一完成各個實驗，
