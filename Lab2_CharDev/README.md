@@ -5,6 +5,10 @@
 * 掌握 kernel space 與 user space 的通訊：實作 copy_to_user 與 copy_from_user 函數，學習如何在保護模式下安全地跨越記憶體邊界（Memory Boundary）進行數據交換。
 * 實作字元驅動程式 (Character Device)：學習主設備號 (Major numbers) 的分配與檔案操作 (file_operations) 的對接。
 
+
+
+
+
 ## 結果展示
 放一張成果圖
 成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間的讀取與寫入。
