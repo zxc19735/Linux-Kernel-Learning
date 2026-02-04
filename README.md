@@ -1,6 +1,6 @@
 # Linux Kernel Learning Journey
 
-這個 Repo 記錄了我學習 Linux 核心開發的實驗過程。
+這份 Repo 記錄筆者學習 Linux 核心開發的實驗過程。
 
 ## 實驗清單
 * [Lab 1: Hello World](./Lab1_HelloWorld/README.md) - 學習核心模組的載入與編譯。
@@ -11,3 +11,5 @@
 * 使用 **C 語言** 撰寫 Linux Kernel Module (LKM)。
 * 掌握 **copy_to_user** / **copy_from_user** 安全機制。
 * 理解 **Jiffies** 與核心時間管理。
+
+## 補充
