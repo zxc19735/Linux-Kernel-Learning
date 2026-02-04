@@ -20,7 +20,7 @@
 7. 移除核心：`sudo rmmod hello`
 8. 在系統日誌檢查移除核心訊息「Goodbye! 結束 Kernel 實驗」：`sudo dmesg | tail`
 
-## 環境：Oracle VirualBox VM
+## 開發環境：Oracle VirualBox VM
 * 作業系統：Ubuntu-24.03.3 LTS
 * RAM：4GB
 * 硬碟容量：20GB
