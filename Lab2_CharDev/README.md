@@ -20,7 +20,7 @@
 
 * 開發工作流 (Workflow) 的確立：這次經驗讓我確立了「工廠與展覽館」的開發模型——將 VM 視為開發工廠（Factory），GitHub 視為最終成品的展示區（Exhibition）。遵守「單向變更、先 Pull 後 Push」的紀律，是維持多人協作與異地開發穩定性的基石。
 
-## 步驟：
+## 實作步驟：
 1. 建立並進入實驗二資料夾：`mkdir kernel_lab2 && cd kernel_lab2` 。
 2. 撰寫 my_chardev.c，實作 read, write 與核心緩衝區管理：`nano my_chardev.c`
 3. 撰寫 Makefile：`nano Makefile`。
