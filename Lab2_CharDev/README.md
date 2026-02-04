@@ -32,10 +32,11 @@
 
 ## 解決困難與心得分享：
 1. Everything is a file：透過這個實驗，深刻體會到為什麼 Linux 把硬體操作抽象化為檔案操作，這大幅降低了開發的門檻。
-2. 透過 linux 的 dev_read、dev_write 等 system call 功能，實作了作業系統裡的 software interrupt (軟體中斷) 概念，看著教科書的定義和例子的應用，非常有成就感。
-3. 除了實驗的操作，筆者也花了許多時間熟悉 git 與 github 操作，因為在先前經驗中 local 端修改了程式，但在 github 修改了 README.md 內容，導致在 VM 裡使用 push 更新 project 時發生了 error，即git 擔心使用 push 直接推上去會覆蓋掉雲端的新版的 README.md，造成了衝突，所幸後來備份檔案後，單獨將新版的 REAMDE.md 加入 project，才成功解決了版本不一致的問題。
+2. 實作 Software interrupt：透過 linux 的 dev_read、dev_write 等 system call 功能，實作了作業系統裡的 software interrupt (軟體中斷) 概念，看著教科書的定義和例子的應用，非常有成就感。
+3. git 衝突與解決：這次實驗遇到了 git 衝突的問題。由於筆者在 VM 修改了新程式，但又在 github 上修改了 README.md 內容，讓地端與雲端都出現了新內容，這時就會產生衝突：當雲端有一份檔案，也有一份「同名但 git 還不認識」的檔案時，Git 為了保護資料不被雲端覆蓋，會選擇直接「罷工」，導致使用 git 的 pull 、push 指令時都發生了 error，所幸後來備份檔案後，單獨將新版的 REAMDE.md 加入地端的 project，才成功解決了版本不一致的問題。
+4. 工廠與展覽館與單向通道：這次的 git 衝突問題，也讓筆者更深刻體悟到單向通道的重要性，在這個專案中，VM 就像是負責製作產品的工廠，github 則是負責展示產品的展覽館，而產品就是這次的 project，遵守著工廠只負責製造、展覽館只負責展示的單向通道規則，就能有效避免類似的問題。
 
 
 ## 補充說明：
-1. copy_to_user / copy_from_user：這是核心開發最重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的搬運員來確保資料交換的安全性。
-2. Major Number (主裝置號)：如同分機號碼，讓 Linux 核心知道要把 /dev/ 下的請求轉交給哪一個驅動程式。
+1. copy_to_user / copy_from_user：這是核心開發重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的 API 來確保資料交換的安全性。
+2. Major Number (主裝置號)：就像分機號碼，可讓 Linux 核心知道要把 /dev/ 下的請求轉交給哪一個驅動程式。
