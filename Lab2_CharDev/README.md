@@ -5,8 +5,24 @@
 * RAM：4GB
 * 硬碟容量：20GB
 * CPU：4核心
+  
 ## 實驗目的：
-理解 VFS (虛擬檔案系統) 如何將硬體抽象化為檔案。
+* 深究 VFS 抽象機制：理解 Linux 如何透過虛擬檔案系統 (VFS) 將複雜的硬體操作抽象化為統一的檔案介面，實踐「Everything is a file」的核心哲學。
+* 掌握 kernel space 與 user space 的通訊：實作 copy_to_user 與 copy_from_user 函數，學習如何在保護模式下安全地跨越記憶體邊界（Memory Boundary）進行數據交換。
+* 實作字元驅動程式 (Character Device)：學習主設備號 (Major numbers) 的分配與檔案操作 (file_operations) 的對接。
+
+## 結果展示：
+放一張成果圖
+
+## 核心與技術體悟
+* VFS 抽象層的實戰應用：透過字元驅動的開發，深刻理解 VFS 屏除硬體差異的強大。從 User-space 來看，操作驅動程式與操作普通文字檔無異，這種架構設計大幅降低了應用層開發的複雜度。
+
+* 系統呼叫 (System Call) 與軟體中斷的對接：本實驗實作了 dev_read 與 dev_write 等後端函數，這正是作業系統處理「軟體中斷」的具體流程。當 User-space 呼叫 read() 時，會觸發 Trap 進入 Kernel-mode，看著課本上的理論在自己寫的核心模組中運作，是非常紮實的成就感。
+
+## 工程素養：Git 版本控管與流程優化
+* 衝突處理 (Conflict Resolution)：在環境遷移過程中，遭遇了地端與雲端 README 同時變動導致的 Git 衝突（Rejected error）。這讓我學會如何利用 rebase 與 backup-merge 策略恢復開發進度，而非盲目刪除檔案。
+
+* 開發工作流 (Workflow) 的確立：這次經驗讓我確立了「工廠與展覽館」的開發模型——將 VM 視為開發工廠（Factory），GitHub 視為最終成品的展示區（Exhibition）。遵守「單向變更、先 Pull 後 Push」的紀律，是維持多人協作與異地開發穩定性的基石。
 
 ## 流程：
 1. 在 Ubuntu 上撰寫 my_chardev.c 與對應的 Makefile。
