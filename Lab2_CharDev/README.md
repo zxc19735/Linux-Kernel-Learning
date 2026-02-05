@@ -22,8 +22,8 @@
 
 ## 實作步驟
 1. 建立並進入實驗二資料夾：`mkdir kernel_lab2 && cd kernel_lab2` 
-2. 撰寫 my_chardev.c，實作 read, write 與核心緩衝區管理：`nano my_chardev.c`
-3. 撰寫 Makefile：`nano Makefile`
+2. 撰寫程式 (程式碼可參考 my_chardev.c)：`nano my_chardev.c`
+3. 撰寫編譯腳本 (可參考 Makefile)：`nano Makefile`
 4. 編譯：`make` 產生 my_chardev.ko
 5. 載入核心： `sudo insmod my_chardev.ko`
 6. 查詢 dmesg 獲取系統分配的 主設備號：`dmesg | tail` (假設看到的號碼為 236)
