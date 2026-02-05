@@ -35,6 +35,5 @@ dmesg -w (進入觀察模式，每五秒會看到一次鬧鐘響起)。
 * CPU：4核心
 
 ## 補充說明
-jiffies：Linux 核心的時間單位。透過 jiffies + msecs_to_jiffies(5000)，我們能精準計算出「未來 5 秒」對應的核心時間。
-
-Interrupt Context (中斷上下文)：定時器觸發時，程式碼運行在中斷上下文。這是一個高權限但受限的環境，不能在裡面執行 sleep，必須快進快出。
+* jiffies：Linux 核心的時間單位。透過 jiffies + msecs_to_jiffies(5000)，可以精準計算出「未來 5 秒」對應的核心時間
+* Interrupt Context (中斷上下文)：定時器觸發時，程式碼運行在中斷上下文，一個高權限但受限的環境，不能在裡面執行 sleep，必須快進快出
