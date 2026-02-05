@@ -1,20 +1,20 @@
 # 實驗一：Kernel Mode "Hello Workd" 
-## 實驗目的：
+## 實驗目的
 * 了解核心特權級別 (Ring 0)
 
-## 成果展示：
+## 成果展示
 將程式碼成功放進 kernel，並使用 printk 顯示字串
 放一張展示圖
 
-## 挑戰與心得：
+## 挑戰與心得
 1. 在 Makefile 中需留意 Tab 與空白鍵的縮排問題，以 Tab 取代空格，避免編譯失敗
 2. 了解「動態載入」觀念，作業系統不需要重啟就能更新驅動程式的核心機制
 
-## 實作步驟：
+## 實作步驟
 1. 建立並進入實驗一資料夾(以下程式碼都在同個資料夾下執行)：`mkdir kernel_lab1 && cd kernel_lab1` 。
 2. 撰寫程式碼：`nano hello.c` (貼上 hello.c 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)。
 3. 撰寫編譯腳本：`nano Makefile` (貼上 Makefile 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)。
-4. 開始編譯：`make` ，等待編譯過程，若成功編譯完成，輸入`ls`後會發現在資料夾裡頭出現 kernel object `hello.ko` 。
+4. 開始編譯：`make` ，等待編譯過程，若成功編譯完成，輸入`ls`後會發現在資料夾裡頭出現 kernel object (hello.ko)。
 5. 載入核心：`sudo insmod hello.ko`
 6. 在系統日誌查看載入核心訊息「Hello! 這是我在 Kernel 的第一步」：`sudo dmesg | tail`
 7. 移除核心：`sudo rmmod hello`
