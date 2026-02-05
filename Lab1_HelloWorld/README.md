@@ -44,5 +44,5 @@
 2. 在 VirtualBox 設定「通訊埠轉發」 (Port Forwarding) 因為 VM 躲在虛擬網卡後面，故通知 Windows：「當我連到 host 的 2222 port 時，轉給 VM 的 22 埠」
 在 VirtualBox 選單：設定 -> 網路 -> 介面卡 1，確認是 NAT 模式
 點開 進階 -> 通訊埠轉發
-新增一條規則：名稱 SSH，通訊協定 TCP，主機 IP 127.0.0.1，主機連接埠 2222，客用 IP 留白，客用連接埠 22
-3. 在 Windows 連線 打開你的 Windows PowerShell 或 CMD，輸入： ssh -p 2222 你的Ubuntu帳號@127.0.0.1 (第一次連線時會詢問是否信任，輸入 yes，然後輸入 Ubuntu 密碼)
+新增一條規則：名稱 SSH，通訊協定 TCP，主機 IP 127.0.0.1，主機連接埠 2222，客用 IP 留白，客用連接埠 22。
+3. 在 Windows 連線 打開你的 Windows PowerShell 或 CMD，輸入： ssh -p 2222 你的Ubuntu帳號@127.0.0.1 (第一次連線時會詢問是否信任，輸入 yes，然後輸入 Ubuntu 密碼)。
