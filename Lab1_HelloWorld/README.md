@@ -1,4 +1,4 @@
-# 實驗一：Kernel Mode "Hello Workd" 
+# 實驗一：Kernel Mode "Hello World" 
 ## 實驗目的
 * **探索 LKM (可載入核心模組) 機制**：理解 Linux 如何在不重新編譯核心、不重啟系統的情況下，動態擴展系統功能。
 
