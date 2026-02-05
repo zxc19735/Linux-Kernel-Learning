@@ -4,7 +4,7 @@
 
 * **跨越 User Space 與 Kernel Space 的界線**：實作在特權模式 (Ring 0) 下執行的程式碼，並理解其與一般應用程式在資源存取權限上的差異。
 
-* **核心日誌與調試初探**：掌握 printk 函數與 /var/log/syslog 的互動，建立核心層級的調試 (Debug) 基礎。
+* **核心日誌初探**：掌握 printk 函數與 /var/log/syslog 的互動，建立核心層級的調試 (Debug) 基礎。
 
 ## 成果展示
 ![實驗一成果圖1](images/Lab1_result1.png)
