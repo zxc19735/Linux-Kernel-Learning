@@ -22,9 +22,9 @@
 3. 撰寫編譯腳本：`nano Makefile` (貼上 Makefile 程式碼後，Ctrl+O 存檔，Ctrl+X 離開)
 4. 開始編譯：`make` ，等待編譯過程，若成功編譯完成，輸入`ls`後會發現在資料夾裡頭出現 kernel object (hello.ko)
 5. 載入核心：`sudo insmod hello.ko`
-6. 在系統日誌查看載入核心訊息「Hello! 這是我在 Kernel 的第一步」：`sudo dmesg | tail`
+6. 在系統日誌查看載入核心訊息「Hello! 這是我在 Kernel 的第一步」：`sudo dmesg | tail -5`
 7. 移除核心：`sudo rmmod hello`
-8. 在系統日誌檢查移除核心訊息「Goodbye! 結束 Kernel 實驗」：`sudo dmesg | tail`
+8. 在系統日誌檢查移除核心訊息「Goodbye! 結束 Kernel 實驗」：`sudo dmesg | tail -5`
 
 ## 開發環境：Oracle VirualBox VM
 * 作業系統：Ubuntu-24.03.3 LTS
