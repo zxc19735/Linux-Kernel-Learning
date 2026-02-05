@@ -1,9 +1,9 @@
 # 實驗二：字元驅動程式 (Character Device Driver) 與 System Call 實作
   
 ## 實驗目的
-* 深究 VFS 抽象機制：理解 Linux 如何透過虛擬檔案系統 (VFS) 將複雜的硬體操作抽象化為統一的檔案介面，實踐「Everything is a file」的核心觀念。
-* 掌握 kernel space 與 user space 的通訊：實作 copy_to_user 與 copy_from_user 函數，學習如何在保護模式下安全地跨越記憶體邊界（Memory Boundary）進行數據交換。
-* 實作字元驅動程式 (Character Device)：學習主設備號 (Major numbers) 的分配與檔案操作 (file_operations) 的對接。
+* **深究 VFS 抽象機制**：理解 Linux 如何透過虛擬檔案系統 (VFS) 將複雜的硬體操作抽象化為統一的檔案介面，實踐「Everything is a file」的核心觀念。
+* **掌握 kernel space 與 user space 的通訊**：實作 copy_to_user 與 copy_from_user 函數，學習如何在保護模式下安全地跨越記憶體邊界（Memory Boundary）進行數據交換。
+* **實作字元驅動程式 (Character Device)**：學習主設備號 (Major numbers) 的分配與檔案操作 (file_operations) 的對接。
 
 ## 結果展示
 ![實驗二成果圖](images/Lab2_result.png)
