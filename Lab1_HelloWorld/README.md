@@ -37,7 +37,7 @@
 ## 補充說明：
 1. `insmod` (insert module)：hello.c 程式碼正式成為作業系統的一部份，並執行'hello_init' 。Kernel會把 .ko 檔案載入記憶體並分配權限，此時程式碼擁有高權限
 2. `rmmod` (remove module)：執行 `hello_exit` 並把記憶體還給系統
-3. makefile` ：做為一個傳聲筒，請系統編譯 hello.o，並將編譯的結果回傳給目前的資料夾
+3. makefile：做為一個傳聲筒，請系統編譯 hello.o，並將編譯的結果回傳給目前的資料夾
 ## 補充說明 2：
 因筆者主機的 OS 為 Windows，也可使用 SSH 連線，進行遠端操作 VM 裡的 terminal，SSH 連線步驟如下：
 1. 在 Ubuntu 裡安裝 SSH 伺服器 開啟終端機輸入： sudo apt update && sudo apt install openssh-server -y
