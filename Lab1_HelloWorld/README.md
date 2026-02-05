@@ -1,10 +1,10 @@
 # 實驗一：Kernel Mode "Hello Workd" 
 ## 實驗目的
-* 探索 LKM (可載入核心模組) 機制：理解 Linux 如何在不重新編譯核心、不重啟系統的情況下，動態擴展系統功能。
+* **探索 LKM (可載入核心模組) 機制**：理解 Linux 如何在不重新編譯核心、不重啟系統的情況下，動態擴展系統功能。
 
-* 跨越 User Space 與 Kernel Space 的界線：實作在特權模式 (Ring 0) 下執行的程式碼，並理解其與一般應用程式在資源存取權限上的差異。
+* **跨越 User Space 與 Kernel Space 的界線**：實作在特權模式 (Ring 0) 下執行的程式碼，並理解其與一般應用程式在資源存取權限上的差異。
 
-* 核心日誌與調試初探：掌握 printk 函數與 /var/log/syslog 的互動，建立核心層級的調試 (Debug) 基礎。
+* **核心日誌與調試初探**：掌握 printk 函數與 /var/log/syslog 的互動，建立核心層級的調試 (Debug) 基礎。
 
 ## 成果展示
 ![實驗一成果圖1](images/Lab1_result1.png)
