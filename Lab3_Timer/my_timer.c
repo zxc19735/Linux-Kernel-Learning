@@ -26,7 +26,7 @@ static int __init timer_init(void) {
 }
 
 static void __exit timer_exit(void) {
-    // 3. 務必要刪除定時器，否則rmmod後鬧鐘響了會導致核心崩潰產生panic
+    // 3. 務必程式執行後要刪除定時器，否則 rmmod 後鬧鐘響了會導致核心崩潰產生panic
     del_timer(&my_timer);
     printk(KERN_INFO "Timer Module: 鬧鐘已移除\n");
 }
