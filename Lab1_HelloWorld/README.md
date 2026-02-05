@@ -8,6 +8,7 @@
 
 ## 成果展示
 ![實驗三成果圖](images/Lab1_result.png)
+
 將程式碼成功放進 kernel，並使用 printk 顯示字串
 
 
