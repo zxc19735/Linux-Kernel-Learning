@@ -42,5 +42,5 @@
 * CPU：4核心
 
 ## 補充說明
-1. copy_to_user / copy_from_user：這是核心開發重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的 API 來確保資料交換的安全性
-2. Major Number (主設備號)：就像分機號碼，可讓 Linux 核心知道要把 /dev/ 下的請求轉交給哪一個驅動程式
+* copy_to_user / copy_from_user：這是核心開發重要的 API。因為 User Space 與 Kernel Space 的記憶體是隔離的，核心必須使用專屬的 API 來確保資料交換的安全性
+* Major Number (主設備號)：就像分機號碼，可讓 Linux 核心知道要把 /dev/ 下的請求轉交給哪一個驅動程式
