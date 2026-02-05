@@ -6,8 +6,7 @@
 * 實作字元驅動程式 (Character Device)：學習主設備號 (Major numbers) 的分配與檔案操作 (file_operations) 的對接。
 
 ## 結果展示
-放一張成果圖
-成功建立 User Space 與 Kernel Space 的溝通管道，實現資料的跨空間的讀取與寫入
+![實驗二成果圖](images/Lab2_result.png)
 
 ## 挑戰與心得
 #### 核心與技術體悟
