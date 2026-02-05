@@ -26,8 +26,8 @@
 3. 撰寫編譯腳本 (可參考 Makefile)：`nano Makefile`
 4. 編譯：`make` 產生 my_chardev.ko
 5. 載入核心： `sudo insmod my_chardev.ko`
-6. 查詢 dmesg 獲取系統分配的 主設備號：`sudo dmesg | tail` (假設看到的號碼為 236)
-7. 在 /dev 目錄下建立硬體節點，手動將驅動程式與檔案系統連結：`sudo mknod /dev/my_os_lab c 236 0`
+6. 查詢 dmesg 獲取系統分配的 主設備號：`sudo dmesg | tail` (假設看到的號碼為 240)
+7. 在 /dev 目錄下建立硬體節點，手動將驅動程式與檔案系統連結：`sudo mknod /dev/my_os_lab c 240 0`
 8. 調整權限為可讀寫：`sudo chmod 666 /dev/my_os_lab`
 9. 透過 `echo` 與 `head` 模擬應用程式 (User Space) ，對硬體進行寫入與讀取操作：`echo "Hello_OS_Kernel" > /dev/my_os_lab` 、`head -n 1 /dev/my_os_lab` (若成功，可在螢幕看到剛才寫入的字串)
 11. 觀察核心行為：`sudo dmesg | tail -5` ，會看到 copy_from_user 與 copy_to_user 的處理紀錄
