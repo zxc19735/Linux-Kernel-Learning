@@ -7,10 +7,8 @@
 * 核心日誌與調試初探：掌握 printk 函數與 /var/log/syslog 的互動，建立核心層級的調試 (Debug) 基礎。
 
 ## 成果展示
-![實驗三成果圖](images/Lab1_result.png)
-
-將程式碼成功放進 kernel，並使用 printk 顯示字串
-
+![實驗三成果圖](images/Lab1_result1.png)
+![實驗三成果圖](images/Lab1_result2.png)
 
 ## 挑戰與心得
 1. 在 Makefile 中需留意 Tab 與空白鍵的縮排問題，以 Tab 取代空格，避免編譯失敗。
