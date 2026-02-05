@@ -10,14 +10,13 @@
 ## 挑戰與心得
 
 ## 實作步驟
-建立環境：
-mkdir Lab3_Timer && cd Lab3_Timer (建立並進入資料夾)
-編譯與測試：
-make 編譯。
-sudo insmod my_timer.ko (這時你會看到第一行啟動訊息)。
-dmesg -w (進入觀察模式，每五秒會看到一次鬧鐘響起)。
-觀察 jiffies：
-注意印出的 jiffies 數值。這是一個隨時間遞增的計數器，代表系統開機以來的時鐘滴答數。
+1. 建立並進入資料夾：`mkdir Lab3_Timer && cd Lab3_Timer` 
+2. 撰寫程式 (程式碼可參考 my_timer.c)：`nano my_chardev.c`
+3. 撰寫編譯腳本 (可參考 Makefile)：`nano Makefile`
+4. 編譯程式：`make`
+5. 啟動核心：`sudo insmod my_timer.ko`
+6. 查詢系統訊息，每每五秒會看到一次鬧鐘訊息響起：`dmesg -w`
+7. 觀察 jiffies：印出的 jiffies 數值是一個隨時間遞增的計數器，代表系統開機以來的時鐘滴答數。
 
 ## 流程
 撰寫 my_timer.c，利用 timer_setup 初始化鬧鐘。
