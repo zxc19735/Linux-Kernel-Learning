@@ -1,4 +1,4 @@
-# 實驗二：字元驅動程式 (Character Device Driver) 與 System Call 實作
+# 實驗二：Linux 驅動程式開發 (Device Driver) 與 VFS 核心機制實作
   
 ## 實驗目的
 * 實踐「Everything is a file」：深究虛擬檔案系統 (VFS) 抽象機制。
