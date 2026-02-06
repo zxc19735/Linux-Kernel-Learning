@@ -4,7 +4,7 @@
 
 ## 實驗清單
 * [實驗一：Kernel Mode "Hello World"](./Lab1_HelloWorld/README.md) - 學習核心模組的載入與編譯。
-* [實驗二：字元驅動程式 (Character Device Driver) 與 System Call 實作](./Lab2_CharDev/README.md) - 實作字元驅動程式與 User/Kernel 空間通訊。
+* [實驗二：Linux 驅動程式開發 (Device Driver) 與 VFS 核心機制實作](./Lab2_CharDev/README.md) - 實作字元驅動程式與 User/Kernel 空間通訊。
 * [實驗三：核心定時器 (Kernel Timer) 與非同步機制](./Lab3_Timer/README.md) - 探索非同步處理與核心定時器。
 
 ## 技術重點
