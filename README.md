@@ -6,6 +6,8 @@
 * [實驗一：Kernel Mode "Hello World"](./Lab1_HelloWorld/README.md) - 學習核心模組的載入與編譯。
 * [實驗二：Linux 驅動程式開發 (Device Driver) 與 VFS 核心機制實作](./Lab2_CharDev/README.md) - 實作字元驅動程式與 User/Kernel 空間通訊。
 * [實驗三：核心定時器 (Kernel Timer) 與非同步機制](./Lab3_Timer/README.md) - 探索非同步處理與核心定時器。
+* [實驗四：跨越 VM 佈署 Hardware：樹莓派硬體通訊與開發環境拓荒](./Lab4_Pi_Onboarding/README.md) - 轉移戰場，踏入 Raspberry Pi Zero 2 WH 世界
+
 
 ## 技術重點
 * 使用 **C 語言** 撰寫 Linux Kernel Module (LKM)。
