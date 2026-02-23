@@ -6,7 +6,9 @@
 * **佈署移動式開發工作流**：建立基於 WiFi SSH 與實體 Serial Port 的雙軌通訊，確保在資源受限的外部環境（如無區域網路）下，依然具備完整的程式碼編輯與 Debug 能力。
 
 ## 成果展示
-(待補充)
+![實驗四_image安裝](images/Lab4_OS_image_installation.png)
+![實驗四_樹梅派執行](images/Lab4_pi_running.jpg)
+![實驗四_serial_port執行](Lab4_serial_port.png)
 
 ## 挑戰與心得
 * 硬體層級的 Debug ： 本實驗最大的挑戰在於處理 Windows 與樹莓派之間的「握手失敗」。在無法辨識裝置的情況下，必須具備從線材物理特性（Data vs Power only）到核心驅動層（DWC2 Controller）的層級化排除能力。這讓筆者深刻體會到「驅動程式不僅僅只是程式碼，更是軟硬體間的精準契約」。
