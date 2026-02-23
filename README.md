@@ -1,4 +1,4 @@
-# Linux Kernel Learning Journey
+# Journey from Kernel Space (VM) to Physical Hardware (Raspberry Pi)
 
 這份 Repo 記錄筆者學習 Linux 核心開發的實驗過程。
 
