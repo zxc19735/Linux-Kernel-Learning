@@ -1,4 +1,7 @@
 # Journey from Kernel Space (VM) to Physical Hardware (Raspberry Pi)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+![Raspberry Pi](https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)
 
 這是一份關於 Linux 核心開發的深度實作記錄。透過從 VirtualBox 虛擬機出發，最終落地於實體 Raspberry Pi Zero 2 WH，筆者實踐了對驅動開發以及硬體抽象層的應用。
 
