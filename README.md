@@ -16,5 +16,5 @@
 
 ## 專案維護
 1. 這份 Repo 遵守 Clean Architecture 原則。透過 .gitignore 精準過濾編譯過程產生的中間產物（如 .o、.ko、.mod.c 等 Build Artifacts），僅保留原始碼（Source Code）、建置腳本（Makefile）與實驗結果截圖。
-2. 這種作法確保了版本庫的輕量化與純粹性，讀者可直接複製本專案，在 Linux 環境下執行 make 即可重建實驗環境，落實「Infrastructure as Code」的維護精神。
+2. 這種作法確保了版本庫的輕量化與純粹性，讀者可直接複製本專案，在 Linux 環境下達成 One-Command Build（執行 `make` 即可重現實驗成果）。
 3. 依照各個 README.md 提供的流程步驟，讀者即能逐一完成各個實驗。
