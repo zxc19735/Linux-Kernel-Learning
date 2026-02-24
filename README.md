@@ -5,7 +5,7 @@
 
 這是一份關於 Linux 核心開發的深度實作記錄。透過從 VirtualBox 虛擬機出發，最終落地於實體 Raspberry Pi Zero 2 WH，筆者實踐了對驅動開發以及硬體抽象層的應用。
 <p align="center">
-  <img src="images/Raspberry_Pi_development.jpg" width="80%">
+  <img src="images/Raspberry_Pi_development.jpg" width="70%">
   <br>
   <i style="color: gray;">Real-time kernel development on Raspberry Pi Zero 2 WH via Serial Console and SSH Connection.</i>
 </p>
