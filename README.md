@@ -1,6 +1,6 @@
 # Journey from Kernel Space (VM) to Physical Hardware (Raspberry Pi)
 
-這份 Repo 記錄筆者學習 Linux 核心開發的實驗過程。
+這是一份關於 Linux 核心開發的深度實作記錄。透過從 VirtualBox 虛擬機出發，最終落地於實體 Raspberry Pi Zero 2 WH，筆者實踐了對驅動開發以及硬體抽象層的應用。
 
 ## 實驗清單
 * [實驗一：Kernel Mode "Hello World"](./Lab1_HelloWorld/README.md) - 學習核心模組的載入與編譯。
