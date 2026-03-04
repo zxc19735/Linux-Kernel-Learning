@@ -17,12 +17,6 @@
 * [實驗四：跨越 VM 佈署 Hardware：樹莓派硬體通訊與開發環境拓荒](./Lab4_Pi_Onboarding/README.md) - 轉移開發戰場，踏入 Raspberry Pi Zero 2 WH 世界
 * [實驗五：物理世界的中斷對接：GPIO 硬體觸發與核心 IRQ 處理](./Lab5_Interrupt/README.md) - 將實體的機械動作轉化為 Linux 核心的中斷事件（Interrupt Event）。
 
-
-## 技術重點
-* 使用 **C 語言** 撰寫 Linux Kernel Module (LKM)。
-* 掌握 **copy_to_user** / **copy_from_user** 安全機制。
-* 理解 **Jiffies** 與核心時間管理。
-
 ## 專案維護
 1. 這份 Repo 遵守 Clean Architecture 原則。透過 .gitignore 精準過濾編譯過程產生的中間產物（如 .o、.ko、.mod.c 等 Build Artifacts），僅保留原始碼（Source Code）、建置腳本（Makefile）與實驗結果截圖。
 2. 這種作法確保了版本庫的輕量化與純粹性，讀者可直接複製本專案，在 Linux 環境下達成 One-Command Build（執行 `make` 即可重現實驗成果）。
