@@ -9,12 +9,12 @@
 
 ## 成果展示
 <p align="center">
-  <img src="images/result1.PNG" width="80%" alt="dmesg 顯示成功">
-  <br><em>圖一：透過微動開關成功觸發 GPIO 中斷訊息</em>
+  <img src="images/result2.jpg" width="80%" alt="實體線路連接">
+  <br><em>圖一：透過實體線路連接成功實現 GPIO 中斷實驗</em>
 </p>
 <p align="center">
-  <img src="images/result2.jpg" width="80%" alt="實體線路連接">
-  <br><em>圖二：透過實體線路連接成功實現 GPIO 中斷實驗</em>
+  <img src="images/result1.PNG" width="80%" alt="dmesg 顯示成功">
+  <br><em>圖二：於 dmesg 成功觸發 GPIO 中斷訊息</em>
 </p>
 
 實體電路佈署：使用麵包板、杜邦線連結樹莓派 Pin 9 (GND) 與 Pin 11 (GPIO 17)，完成拉低電位（Active Low）的電路設計。
