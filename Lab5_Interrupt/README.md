@@ -8,7 +8,14 @@
 * **體察物理訊號的不確定性**：觀察機械按鈕產生的彈跳（Debouncing）現象與核心處理中斷的延遲，理解為什麼複雜系統需要「中斷下半部（Bottom Half）」處理機制。
 
 ## 成果展示
-待補上圖片
+<p align="center">
+  <img src="images/result1.PNG" width="80%" alt="dmesg 顯示成功">
+  <br><em>圖一：透過微動開關成功觸發 GPIO 中斷訊息</em>
+</p>
+<p align="center">
+  <img src="images/result2.jpg" width="80%" alt="實體線路連接">
+  <br><em>圖二：透過實體線路連接成功實現 GPIO 中斷實驗</em>
+</p>
 
 實體電路佈署：使用麵包板、杜邦線連結樹莓派 Pin 9 (GND) 與 Pin 11 (GPIO 17)，完成拉低電位（Active Low）的電路設計。
 
