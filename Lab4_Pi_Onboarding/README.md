@@ -18,13 +18,13 @@
 </p>
 
 ## 挑戰與心得
-* 硬體層級的 Debug ： 本實驗最大的挑戰在於處理 Windows 與樹莓派之間的「握手失敗」。在無法辨識裝置的情況下，必須具備從線材物理特性（Data vs Power only）到核心驅動層（DWC2 Controller）的層級化排除能力。這讓筆者深刻體會到「驅動程式不僅僅只是程式碼，更是軟硬體間的精準契約」。
+* 硬體層級的 Debug ： 本實驗最大的挑戰在於處理 Windows 與樹莓派之間的「握手失敗」。在無法辨識裝置的情況下，必須具備從線材物理特性（Data vs Power only）到核心驅動層（DWC2 Controller）的層級化排除能力。這讓筆者深刻體會到驅動程式不僅僅只是程式碼，也是軟硬體間的精準契約」。
 
 * 核心參數的權衡與配置： 理解 `/boot/firmware/` 下 `config.txt` 與 `cmdline.txt` 的交互作用。例如 `otg_mode=1` 的衝突處理，這讓筆者對嵌入式系統在引導階段（Bootloader Stage）如何動態加載核心模組有了實務上的認識。
 
-* 序列埠通訊的底層磨練 (TTY Abstraction)： 不同於 SSH 具備完善的網路層包裝，Serial Port 回歸到最原始的 TTY 序列傳輸。在實驗中遇到字元回顯（Echo）與控制碼（如 Backspace 的 ASCII 處理）的偏差，這讓筆者深刻體認到即使是簡單的輸入輸出，在底層韌體世界中都需要精準的時序與驅動匹配。
+* 序列埠通訊的底層磨練 (TTY Abstraction)： 不同於 SSH 具備完善的網路層包裝，Serial Port 回歸到最原始的 TTY 序列傳輸。在實驗中遇到字元回顯（Echo）與控制碼（如 Backspace 的 ASCII 處理）的偏差，這讓筆者體會到即使是簡單的輸入輸出，在底層韌體世界中都需要精準的時序與驅動匹配。
 
-* 資源受限下的 Lite OS 策略：為了追求執行效率，本實驗捨棄了圖形化桌面，改用 Lite OS (Headless Mode)。這強迫筆者必須脫離對圖形介面的依賴，改用 nmcli 管理網路、用 nano/vim 編輯配置。這種在「資源受限」環境下的開發習慣，正是嵌入式開發的核心精神。
+* 資源受限下的 Lite OS 策略：為了追求執行效率，本實驗捨棄了圖形化桌面，改用 Lite OS (Headless Mode)。這強迫筆者必須脫離對圖形介面的依賴，改用 nmcli 管理網路、用 nano/vim 編輯配置。實現在「資源受限」環境下的開發方式。
 
 ## 實作步驟
 1. 系統初始化： 使用 Raspberry Pi Imager 燒錄 64-bit Lite OS，並預設 WiFi 與 SSH 憑證。
