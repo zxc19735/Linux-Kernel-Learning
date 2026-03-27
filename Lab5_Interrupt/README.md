@@ -37,7 +37,7 @@
 2. 定位編號：查詢 /sys/kernel/debug/gpio 確定 GPIO 17 的動態編號為 529，並修正核心程式碼的 gpio_button 變數。
 3. 編寫與註冊：使用 gpio_request 申請資源，並透過 request_irq 綁定 IRQF_TRIGGER_FALLING 觸發條件。
 4. 掛載與觀察：sudo insmod 載入模組，並即時監控 /proc/interrupts 確認 IRQ 號碼已成功配發給 my_gpio_handler。
-5. 壓力測試：透過物理連擊按鈕測試 ISR 的回應能力，並藉由 dmesg 觀察日誌噴出的頻率。
+5. 壓力測試：透過物理連擊按鈕測試 ISR 的回應能力，並藉由 dmesg 觀察日誌顯示的頻率。
 
 ## 開發環境
 * 硬體設備：Raspberry Pi Zero 2 WH、400孔麵包板、20cm 杜邦線、6x6mm 微動開關。
